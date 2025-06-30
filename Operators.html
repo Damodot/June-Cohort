@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="showWords()">Show Words</button>
+    <div id="output"></div>
+</body>
+</html>
+
+<script>
+    let name = 'Javascript' 
+    console.log(name[0]);
+    
+    console.log(name + " " + "class");
+
+    
+    let input = document.getElementById('input')
+    function showWords() {
+        let output = document.getElementById('output')
+        let outputWord = input.value.toLowerCase().trim().replaceAll('stupid', '*****').replaceAll('fuck', '****')
+        output.innerHTML += `<h1>${outputWord}</h1>`
+        console.log(input.value);
+    }
+
+    // OPERATORS
+    // ASSIGNMENT Operator =
+    let thisClass = 'Javascript Class'
+    let a = 5
+    console.log(a);
+
+    // Operator +=
+    a += 10
+    console.log(a);
+
+    // Operator *=
+    let b = 3
+    b *= 4
+    console.log(b);
+
+    // Arithmetic Operators + / * ** %
+
+    let c = 12 + 4
+    
+    // Comparison Operator
+    let bool = true
+    console.log(bool);
+    console.log(4 > 3);
+    console.log(4 == '4');
+    console.log(4 === '4');
+    console.log(4 != 4);
+    console.log(3 !== '3');
+    console.log(!true);
+    
+
+    // Logical Operators && ||
+    // OR Operator
+    console.log(4 != '4');
+    
+    let log1 = 4 < 2 || 4 !== '4' || !true || 3 !== 3
+    console.log(log1);
+
+    // AND Operator
+    let log2 = 3 != 2 && 5 !== 4 && 3 !== '3'
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+</script>

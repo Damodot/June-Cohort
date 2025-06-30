@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="greetEverybody()">Greet</button>
+</body>
+
+</html>
+
+<script>
+    let thisClass = 'Javascript'
+
+    // Functions and Function Call
+    function greetEverybody() {
+        console.log('Hello Everybody');
+        console.log(thisClass);
+        function sayHello() {
+            let anotherClass = 'react'
+            console.log(anotherClass);
+        }
+        sayHello()
+    }
+
+    // if (condition) {
+
+    // }
+
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array[index];
+
+    // }
+
+    // for (const element of object) {
+
+    // }
+
+
+    // Global Scope, Function Scope, Block Scope
+    function sayClass() {
+        let classNamer = 'Javascript'
+        var anotherName = 'Graphics'
+        console.log(anotherName);
+        console.log(classNamer);
+    }
+
+    sayClass()
+
+
+    for (let index = 0; index < 1; index++) {
+        var element = 'Javascript';
+
+    }
+    console.log(element);
+
+    // Function Declaration
+    function sayHello() {
+        console.log("Hello Everybody");
+    };
+
+    sayHello();
+    // Function Expression
+    let sayMyName = function () {
+        console.log('My Name is Adedotun');
+    };
+
+    sayMyName();
+    // Anonymous Function
+    // function () {
+
+    // }
+    // SIFE
+    (function () {
+        console.log('This is a self invoking function expression');
+    })();
+    // Callback Function
+    // Functions with parameters
+    function sayHelloToClass(params) {
+        console.log(params);
+    }
+
+    sayHelloToClass(12)
+
+    let addNumber = function (params) {
+        console.log(12 + params);
+    }
+
+    addNumber(24)
+
+    function doMultiply(params1, params2) {
+        console.log(params1 * params2);
+    }
+
+    doMultiply(12, 36)
+
+    let arr1 = ['Mr Daniel', 'Mr Wisdom', "Devisha", 'Miss Sekinat']
+    let arr2 = ['Mr AY', 'Mr Tobi', 'Miss Ini', 'Mr John']
+    let string = true
+
+    function showNames(names) {
+        for (let i = 0; i < names.length; i++) {
+            const element = names[i];
+            console.log(element);
+        }
+    }
+
+    showNames(string)
+
+    function addNums() {
+        console.log(arguments);
+        let sum = 0
+        for (let i = 0; i < arguments.length; i++) {
+            const element = arguments[i]
+            sum += element
+        }
+        sum *= 10
+        console.log(sum);
+        let newArr = Array.from(arguments)
+        newArr.sort()
+        console.log(newArr);
+    }
+
+    addNums(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 23, 1, 4, 5)
+
+    let string2 = 'javascript'
+
+
+    // Function returning a value
+    // function helloEveryBody() {
+    //     return
+    //     let myName = 'Dotun'
+    //     console.log(myName);
+
+    // }
+    // helloEveryBody()
+
+    // console.log(helloEveryBody() + " " + 'Adedeji');
+
+    let username = 'bjdjgsjdj'
+    let password = 'jbsj'
+    let confPassword = 'jbsj'
+
+    function signUp() {
+        if (!username || !password || !confPassword) {
+            alert('All fields are mandatory')
+            return
+        }
+        if (password !== confPassword) {
+            alert('Passwords must be the same')
+            return
+        }
+
+        alert('User Signed In Successfully')
+    }
+
+    signUp()
+
+    // Arrow Function
+    let arrowFunction = (params) => {
+        alert('Displaying ' + params);
+    }
+
+    arrowFunction("Arrow Funcion")
+
+    
+
+</script>

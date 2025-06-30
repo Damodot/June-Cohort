@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <button onclick="generateCard()">Generate</button>
+    <div class="output"></div>
+    <button onclick="changeTheme()">Dark Mode</button>
+
+    <input type="text" id="username">
+    <input type="text" id="password">
+    <button onclick="signup()">Sign In</button>
+</body>
+
+</html>
+
+<script>
+    let currentBody = document.body
+    currentBody.style.backgroundColor = 'white'
+    function generateCard() {
+        let output = document.querySelector('.output')
+        let card = ''
+        for (let i = 0; i < 12; i++) {
+            let randNum = Math.floor(Math.random() * 10)
+            card += randNum
+        }
+        console.log(card);
+        output.innerHTML += `<h1>${card}</h1>`
+    }
+
+    function changeTheme() {
+        console.log(currentBody.style.backgroundColor);
+        if (currentBody.style.backgroundColor === 'white') {
+            currentBody.style.backgroundColor = 'black'
+            currentBody.style.color = 'white'
+        } else {
+            currentBody.style.backgroundColor = 'white'
+            currentBody.style.color = 'black'
+        }
+
+    }
+
+    // function  greet(params) {
+    //     return 'Hello, '+ params
+    // }
+
+    // console.log(greet('shucks'));
+
+
+    // function shout(params) {
+    //     console.log('Hello, ' + params);
+    // }
+
+    // shout('Shucks')
+
+    let user1 = {
+        name: 'Mr Ebuka',
+        lastName: "Money",
+        isMarried: false,
+        currentClass: 'Javascript',
+        skills: ['HTML', 'CSS', 'Javascript'],
+        isDone: {
+            rechargeCard: true,
+            guessingGame: true,
+            BMI: true
+        },
+        getFullName: function () {
+            return `${this.name}` + ' ' + `${this.lastName}`
+        },
+        'phoneNumber': '07092728338'
+    }
+
+    console.log(user1.name);
+    console.log(user1['name']);
+    console.log(user1['skills'][1]);
+    console.log(user1.isDone.BMI);
+    user1.userName = 'EbuksMoney'
+    user1.currentClass = 'React'
+    user1.skills[1] = 'MongoDb'
+    user1.Nationality = 'American'
+    user1.country = 'Nigeria'
+    user1.skills.push('React', 'Node')
+    console.log(user1.getFullName());
+    console.log(user1['phoneNumber']);
+    user1.isMarried = true
+    user1.title = 'Web Developer'
+    user1.school = 'SQI'
+
+    console.log(user1);
+
+    user1.getUserInfo = function () {
+        let skillsWithoutLastSkill = this.skills
+            .slice(0, this.skills.length - 1).join(', ')
+        console.log(skillsWithoutLastSkill)
+        let lastSkill = this.skills[this.skills.length - 1]
+        console.log(lastSkill);
+        let skills = `${skillsWithoutLastSkill}` + ' and ' + `${lastSkill}`
+        console.log(skills);
+        let fullName = this.getFullName()
+
+        let statement = `${fullName} is a ${this.title} and he lives in ${this.country}. He teaches ${skills}`
+        return statement
+
+    }
+    console.log(user1.getUserInfo());
+
+    let output = user1.getUserInfo()
+    console.log(output);
+
+    // Object.keys, Object.values, object.assign, object.hasownproperty
+    // Object.assign
+
+    let copyUser1 = Object.assign({}, user1)
+    console.log(copyUser1);
+
+    user1.department = 'Web Development'
+
+    // Object.keys
+    console.log(Object.keys(user1));
+    console.log(Object.keys(user1.isDone));
+    let userKeys = Object.keys(user1)
+    let userisDoneKeys = Object.keys(user1.isDone)
+
+    console.log(userKeys.concat(userisDoneKeys));
+
+    // Object.values
+    console.log(Object.values(user1));
+
+    // Object.enteries
+    console.log(Object.entries(user1));
+
+    let Database = []
+
+    function signup() {
+        let emailVal = document.getElementById('username').value.trim()
+        let passwordVal = document.getElementById('password').value.trim()
+
+        let user = {
+            email: emailVal,
+            password: passwordVal
+        }
+
+        Database.push(user)
+
+        console.log(Database);
+    }
+
+
+
+
+
+
+</script>

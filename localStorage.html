@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="greetUser"></h1>
+</body>
+
+</html>
+
+<script>
+    // setItem, getItem, removeItem & clear
+    // setItem = to save information in the local storage
+    localStorage.setItem('username', 'Adedotun')
+    localStorage.setItem('curentIndex', 0)
+    let classNames = ['Mr AY', 'Mr Ore', 'Miss Ini']
+    let userObj = {
+        name: 'Mr Ore',
+        isMarried: true,
+        lovesJava: true
+    }
+    localStorage.setItem('classNames', JSON.stringify(classNames))
+    localStorage.setItem('userObj', JSON.stringify(userObj))
+
+    // getItem = to collect information from the local storage
+    let savedName = localStorage.getItem('username')
+    console.log(savedName);
+    document.querySelector('.greetUser').innerHTML = `Welcome ${savedName}`
+
+    let newUserObj = JSON.parse(localStorage.getItem('userObj'))
+    console.log(newUserObj);
+
+    let newClassNames = JSON.parse(localStorage.getItem('classNames'))
+    console.log(newClassNames);
+
+    // removeItem = to remove just one item from the local storage
+    // localStorage.removeItem('classNames')
+    // localStorage.removeItem('username')
+
+    // clear
+    // localStorage.clear()
+
+
+
+
+
+
+</script>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button onclick="number()">Calculate</button>
+    <div id="output"></div>
+</body>
+
+</html>
+
+<script>
+
+    let input = document.getElementById('input')
+    let output = document.getElementById('output')
+
+    function number() {
+        if (input.value === '') {
+            alert('all fields are mandatory')
+        } else {
+            let answer = eval(input.value)
+            output.innerHTML = `<h1>${answer}</h1>`
+        }
+
+
+    }
+
+
+    let arr = []
+    let newArr = Array()
+    let latArr = new Array()
+
+    console.log(arr);
+    console.log(newArr);
+    console.log(latArr);
+
+    let string = "Javascript "
+    console.log(string[0]);
+    console.log(string.includes('Java'));
+    console.log(string[string.length - 1]);
+    console.log(string.split(' '));
+    console.log(string.slice(0, 4));
+    let ourClass = ' Section'
+    console.log(string.concat(" ", ourClass));
+
+
+
+    // arr2[0] = 10
+
+    let arr3 = ['Mr Ay', 'Mr B', 'Mr C', 'Mr D']
+    let bool = [true, false, true, false]
+    let mixed = [1, 'Hello', true, null, undefined, { name: 'Mr Ay' }, [1, 2, 3]]
+
+    let arrOfArr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    console.log(arrOfArr[1][0]);
+    console.log(arrOfArr[2][1]);
+
+    // Array Methods
+    // Length
+    console.log(arrOfArr.length);
+
+    // Includes
+    console.log(mixed.includes(1));
+
+    // Last element
+    console.log(mixed[mixed.length - 1]);
+
+    // Join
+    // let sum = arr2.join('+')
+    // console.log(eval(arr2.join('+')));
+
+    // Slice
+    // let slicedOut = arr2.slice(0, 3)
+
+    // Splice
+    let arr2 = [1, 2, 3, 4, 5]
+    let splicedOut = arr2.splice(2, 3, 30, 40, 50)
+    console.log(splicedOut);
+
+    // console.log(slicedOut2);
+
+    // console.log(arr2.length);
+    console.log(arr2);
+    // console.log(arrOfArr[1].splice(2, 1, 60));
+
+    // console.log(arrOfArr);
+
+
+    // Push
+    arr2.push(6, 7, 8)
+    console.log(arr2);
+
+    // Pop
+    arr2.pop()
+    console.log(arr2);
+
+    // Unshift
+    arr2.unshift(0)
+    console.log(arr2);
+
+    // Shift
+    arr2.shift()
+    console.log(arr2);
+
+    // Sort
+    let arr5 = [4, 5, 6, 3, 1, 8, 9, 2]
+    arr5.sort().reverse()
+    console.log(arr5);
+
+    let letterArr = ['Ay', 'Itunu', 'Ore', 'Lanre', 'Bimpe', 'Ebuka', 'Ini', 'Emmanuel', 'John', 'Tobi', 'Daniel', 'Martins', 'Racheal', 'Tony', 'Muhammed',]
+    letterArr.sort()
+    console.log(letterArr);
+
+    // Reverse
+    arr5.reverse()
+    console.log(arr5);
+
+    // Concat
+    let newestArr = [1, 2, 3]
+    let latestArr = [3, 4, 5]
+
+    console.log(newestArr.concat(latestArr));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

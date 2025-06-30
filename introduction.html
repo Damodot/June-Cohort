@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dropdownDiv{
+            width: 300px;
+            height: 300px;
+            background-color: rebeccapurple;
+            color: white;
+            display: none;
+            transition: all .3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bodyDiv">
+        <p id="pTag">Python</p>
+    </div>
+    <h1>Javascript</h1>
+    <button onclick="showDropDown()">Dropdown Button</button>
+    <div id="dropdownDiv">
+        <h1>Mr Lanre</h1>
+        <h1>Mr Emmanuel</h1>
+        <h1>Mr Ayomide</h1>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let thisClass = 'Javascript'
+    console.log(thisClass);
+
+    // let const & Var
+
+    let myName = 'Adedeji'
+    console.log(myName);
+
+    myName = 'Adedotun'
+    console.log(myName);
+
+    var newName = 'Javascript Class'
+    console.log(newName);
+
+    newName = 'HTML/CSS Class'
+    console.log(newName);
+
+    // const
+
+    const PI = '3.14'
+
+    console.log(PI);
+
+    let bodyDiv = document.getElementById('bodyDiv')
+    bodyDiv.style.width = '300px'
+    bodyDiv.style.height = '300px'
+    bodyDiv.style.backgroundColor = 'red'
+    bodyDiv.innerHTML = `<button>Click Me</button>`
+
+    let textTag = document.getElementById('pTag')
+    // textTag.textContent = 'Javascript'
+    // textTag.innerText = 'Javascript'
+    
+
+    function showDropDown() {
+        let divDropDown = document.getElementById('dropdownDiv')
+        divDropDown.style.display = 'block'
+        divDropDown.style.transition = 'all .3s ease'
+    }
+    
+    
+    
+    
+    
+</script>

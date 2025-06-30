@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="username">
+    <input type="text" name="" id="password">
+    <button onclick="login()">Login</button>
+</body>
+
+</html>
+
+<script>
+    let bool = 4 !== 3 && 0 == ""
+    let bool2 = 4 > 3
+
+    // Truthy Values
+    let a = "Javascript Class"
+    let num = 100
+    let booleanTrue = true
+
+    // Falsy Values
+    let b = ''
+    let num2 = 0
+    let booleanFalse = false
+    let undef
+    let nullVal = null
+
+
+    let isRaining = ''
+    if (!isRaining) {
+        console.log("You need an umbrella");
+    } else {
+        console.log('You dont need an umbrella');
+    }
+
+    // Weather Conditions Rain, Cloudy, Sunny, Windy
+    let weather = 'Rainy'
+
+    if (weather.toLowerCase() === 'rainy') {
+
+        console.log('It is rainy');
+
+    } else if (weather.toLowerCase() === 'cloudy') {
+
+        console.log('It is Cloudy');
+
+    } else if (weather.toLowerCase() === 'sunny') {
+
+        console.log('It is Sunny');
+
+    } else if (weather.toLowerCase() === 'windy') {
+
+        console.log('It is windy');
+
+    } else {
+
+        console.log('Invalid Input');
+
+    }
+
+    // If grade 80 to 100, 70 to 80, 60 to 70, 50 to 60, below 50 
+    let gottenGrade = '0'
+    let grade = +(gottenGrade)
+
+    if (grade >= 80 && grade <= 100) {
+        console.log('Your Grade is A');
+    } else if (grade >= 70 && grade < 80) {
+        console.log('Your Grade is B');
+    } else if (grade >= 60 && grade < 70) {
+        console.log('Your Grade is C');
+    } else if (grade >= 50 && grade < 60) {
+        console.log('Your Grade is D');
+    } else if (grade < 50) {
+        console.log('Your Grade is F');
+    } else {
+        console.log('Invalid Input');
+    }
+
+    // Tenary Operators
+    let isAround = false
+    isAround ?
+        console.log("I came to class")
+        : console.log("I am not around");
+
+    function login() {
+        let username = document.getElementById('username').value.trim()
+        let password = document.getElementById('password').value.trim()
+
+        console.log(username.value);
+        if (username === '' || password === '') {
+            alert('All fields are mandatory')
+        }
+    }
+
+    // Math Object
+    // Math.round
+    console.log(Math.round(3.6));
+    console.log(Math.round(3.4));
+
+
+    // Math.floor
+    console.log(Math.floor(3.9));
+    console.log(Math.floor(3.1));
+
+    // Math.ceil
+    console.log(Math.ceil(3.1));
+    console.log(Math.ceil(3.9));
+
+    // Math.min
+    console.log(Math.min(-5, 3, 20, 4, 5, 10))
+
+    // Math.max
+    console.log(Math.max(-5, 3, 20, 4, 5, 10))
+
+    // Math.random
+    console.log(Math.floor(Math.random() * 101) + 100);
+    
+    console.log(Math.floor(Math.random() * 6) + 5);
+
+
+
+
+
+</script>
