@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        table,
+        thead,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="w-50 rounded m-auto shadow p-4">
+        <h1 class="text-black text-center">Sign Up</h1>
+        <input type="text" placeholder="Username" id="userName" class="form-control mt-3">
+        <input type="text" placeholder="Password" id="password" class="form-control mt-3">
+        <input type="text" placeholder="Confirm Password" id="confPassword" class="form-control mt-3">
+        <button onclick="signin()" class="btn btn-success mt-4 p-3">Sign In</button>
+        <table>
+            <thead class="mt-4 w-100">
+                <tr>
+                    <th>S/N</th>
+                    <th>User Name</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>
+<script>
+    let user = JSON.parse(localStorage.getItem('userDatabase')) || []
+
+    function signin() {
+        let username = document.getElementById('userName').value.trim()
+        let password = document.getElementById('password').value.trim()
+        let confirmPassword = document.getElementById('confPassword').value.trim()
+
+
+        if (!username || !password || !confirmPassword) {
+            alert('All Fields are mandatory')
+            return
+        }
+        if (password !== confirmPassword) {
+            alert('Passwords do not match')
+            return
+        }
+        alert('Sign in successful')
+
+        const userObj = {
+            usernameVal: username,
+            passwordVal: password,
+            confrmpass: confirmPassword
+        }
+        console.log(userObj);
+        user.push(userObj)
+        localStorage.setItem('userDatabase', JSON.stringify(user))
+        console.log(user);
+
+        display()
+    }
+    function display() {
+
+        let tBody = document.querySelector('.tbody')
+        tBody.innerHTML = ""
+        user.filter(function (element, index) {
+            tBody.innerHTML += `
+              <tr>
+                <td>${index + 1}</td>
+                <td>${element.usernameVal}</td>
+                <td>${element.passwordVal}</td>
+             </tr>
+             `
+        }
+
+        );
+        // for (let i = 0; i < user.length; i++) {
+        //     const element = user[i];
+        //     tBody.innerHTML += `
+        //         <tr>
+        //             <td>${i + 1}</td>
+        //             <td>${element.usernameVal}</td>
+        //             <td>${element.passwordVal}</td>
+        //         </tr>
+        //     `
+        // }
+    }
+    display()
+</script>

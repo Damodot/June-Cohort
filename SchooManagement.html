@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduManage Pro | School Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #9333ea 100%);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+
+        .stats-item {
+            transition: all 0.3s ease;
+        }
+
+        .stats-item:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div
+                    class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-xl mr-2">
+                    EM</div>
+                <span class="text-xl font-bold text-indigo-600">EduManage<span class="text-indigo-400">Pro</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="nav-link text-gray-600 hover:text-indigo-600 font-medium">Features</a>
+                <a href="#how-it-works" class="nav-link text-gray-600 hover:text-indigo-600 font-medium">How It
+                    Works</a>
+                <a href="#pricing" class="nav-link text-gray-600 hover:text-indigo-600 font-medium">Pricing</a>
+                <a href="#testimonials"
+                    class="nav-link text-gray-600 hover:text-indigo-600 font-medium">Testimonials</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-indigo-600 font-medium">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#"
+                    class="hidden md:inline-block px-4 py-2 text-indigo-600 font-medium hover:text-indigo-800">Login</a>
+                <a href="#"
+                    class="px-4 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition duration-300">Get
+                    Started</a>
+                <button class="md:hidden text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Revolutionize Your School Management</h1>
+                <p class="text-xl mb-8 text-indigo-100">Comprehensive, cloud-based solution to streamline
+                    administration, enhance learning, and connect your school community.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#"
+                        class="px-8 py-4 bg-white text-indigo-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition duration-300 text-center">Start
+                        Free Trial</a>
+                    <a href="#"
+                        class="px-8 py-4 border-2 border-white text-white rounded-lg font-bold text-lg hover:bg-white hover:bg-opacity-10 transition duration-300 text-center">Watch
+                        Demo</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="bg-white rounded-xl shadow-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
+                        alt="School Management Dashboard" class="w-full h-auto">
+                </div>
+                <div
+                    class="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg shadow-lg hidden md:block">
+                    <div class="flex items-center">
+                        <i class="fas fa-star mr-2"></i>
+                        <span class="font-bold">Trusted by 1,200+ schools</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="stats-item bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">15K+</div>
+                    <div class="text-gray-600">Students Enrolled</div>
+                </div>
+                <div class="stats-item bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">1.2K+</div>
+                    <div class="text-gray-600">Schools Using</div>
+                </div>
+                <div class="stats-item bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">24/7</div>
+                    <div class="text-gray-600">Support Available</div>
+                </div>
+                <div class="stats-item bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">99.9%</div>
+                    <div class="text-gray-600">Uptime Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Powerful Features for Your School</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Everything you need to manage your educational
+                    institution efficiently and effectively.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user-graduate text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Student Management</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive student profiles, attendance tracking, behavior
+                        monitoring, and progress reports all in one place.</p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center hover:text-indigo-800">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chalkboard-teacher text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Teacher Portal</h3>
+                    <p class="text-gray-600 mb-4">Lesson planning, gradebook, assignment distribution, and communication
+                        tools designed specifically for educators.</p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center hover:text-indigo-800">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-money-bill-wave text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Financial Management</h3>
+                    <p class="text-gray-600 mb-4">Automated billing, fee collection, expense tracking, and financial
+                        reporting to keep your finances organized.</p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center hover:text-indigo-800">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Scheduling</h3>
+                    <p class="text-gray-600 mb-4">Automated class scheduling, room allocation, and calendar management
+                        to optimize your school's resources.</p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center hover:text-indigo-800">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Parent Portal</h3>
+                    <p class="text-gray-600 mb-4">Real-time access to student progress, attendance, school
+                        announcements, and direct communication with teachers.</p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center hover:text-indigo-800">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Analytics Dashboard</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive data visualization and reporting tools to track
+                        performance metrics and make informed decisions.</p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center hover:text-indigo-800">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How EduManage Pro Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Simple steps to transform your school administration
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <div class="relative">
+                        <div class="absolute -left-8 -top-8 w-32 h-32 bg-indigo-100 rounded-full opacity-50"></div>
+                        <div class="relative bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-indigo-600">1. Sign Up & Onboarding</h3>
+                            <p class="text-gray-600 mb-6">Create your account and our dedicated team will guide you
+                                through the setup process, helping you migrate your data and customize the system to
+                                your school's needs.</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span class="font-medium">Takes less than 15 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Onboarding process" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center mt-20">
+                <div class="md:w-1/2 mb-12 md:mb-0 order-2 md:order-1">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                        alt="Training session" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12 order-1 md:order-2">
+                    <div class="relative">
+                        <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-indigo-100 rounded-full opacity-50"></div>
+                        <div class="relative bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-indigo-600">2. Training & Implementation</h3>
+                            <p class="text-gray-600 mb-6">We provide comprehensive training for administrators,
+                                teachers, and staff to ensure everyone can use the system effectively. Our team remains
+                                available for support throughout.</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span class="font-medium">1-2 days of training</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center mt-20">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <div class="relative">
+                        <div class="absolute -left-8 -top-8 w-32 h-32 bg-indigo-100 rounded-full opacity-50"></div>
+                        <div class="relative bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-indigo-600">3. Go Live & Ongoing Support</h3>
+                            <p class="text-gray-600 mb-6">Once your school is ready, we'll help you launch the system to
+                                your entire community. Our support team is available 24/7 to answer any questions and
+                                provide assistance.</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span class="font-medium">Continuous support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                        alt="Support team" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose the plan that fits your school's needs and
+                    budget</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Basic</h3>
+                        <p class="text-gray-600 mb-6">Perfect for small schools just getting started</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$49</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <a href="#"
+                            class="block w-full py-3 px-6 bg-indigo-600 text-white rounded-lg font-bold text-center hover:bg-indigo-700 transition duration-300 mb-6">Start
+                            Free Trial</a>
+                        <div class="border-t border-gray-200 pt-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Up to 200 students</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Core features</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Email support</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times text-red-400 mr-2"></i>
+                                    <span>Advanced analytics</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times text-red-400 mr-2"></i>
+                                    <span>Custom integrations</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pro Plan (Featured) -->
+                <div
+                    class="bg-white rounded-xl shadow-2xl overflow-hidden transform scale-105 border-2 border-indigo-600">
+                    <div class="bg-indigo-600 text-white py-2 text-center font-bold">
+                        Most Popular
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Pro</h3>
+                        <p class="text-gray-600 mb-6">Ideal for growing schools with more complex needs</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$99</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <a href="#"
+                            class="block w-full py-3 px-6 bg-indigo-600 text-white rounded-lg font-bold text-center hover:bg-indigo-700 transition duration-300 mb-6">Start
+                            Free Trial</a>
+                        <div class="border-t border-gray-200 pt-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Up to 1,000 students</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>All core features</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Priority support</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Advanced analytics</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times text-red-400 mr-2"></i>
+                                    <span>Custom integrations</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <p class="text-gray-600 mb-6">For large institutions with custom requirements</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Custom</span>
+                        </div>
+                        <a href="#"
+                            class="block w-full py-3 px-6 bg-gray-200 text-gray-800 rounded-lg font-bold text-center hover:bg-gray-300 transition duration-300 mb-6">Contact
+                            Sales</a>
+                        <div class="border-t border-gray-200 pt-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Unlimited students</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>All features included</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>24/7 dedicated support</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Advanced analytics</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Custom integrations</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-600">Need help choosing the right plan? <a href="#"
+                        class="text-indigo-600 font-medium hover:text-indigo-800">Contact our sales team</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Hear from schools that have transformed their
+                    operations with EduManage Pro</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Principal, Oakwood Academy</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"EduManage Pro has completely transformed how we run our school. The
+                        attendance tracking alone has saved us countless hours each week, and the parent communication
+                        tools have improved engagement dramatically."</p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">IT Director, Springfield Prep</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"The implementation was seamless, and the support team was incredibly
+                        responsive. Our teachers love the intuitive interface, and we've seen a 40% reduction in
+                        administrative workload since switching to EduManage Pro."</p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa Rodriguez"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Lisa Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Teacher, Hillside Elementary</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"As a teacher, I appreciate how easy it is to track student progress
+                        and communicate with parents. The gradebook features are fantastic, and I've saved at least 5
+                        hours per week on administrative tasks."</p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">
+                    Read more success stories <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-indigo-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your School?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto text-indigo-100">Join thousands of schools that have streamlined
+                their operations and enhanced learning with EduManage Pro.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#"
+                    class="px-8 py-4 bg-white text-indigo-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition duration-300">Start
+                    Free 30-Day Trial</a>
+                <a href="#"
+                    class="px-8 py-4 border-2 border-white text-white rounded-lg font-bold text-lg hover:bg-white hover:bg-opacity-10 transition duration-300">Schedule
+                    a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Find answers to common questions about EduManage Pro
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button
+                        class="faq-question flex justify-between items-center w-full text-left font-bold text-lg focus:outline-none">
+                        <span>Is there a free trial available?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 text-gray-600 hidden">
+                        <p>Yes, we offer a 30-day free trial with full access to all features. No credit card is
+                            required to start your trial. You can cancel anytime during the trial period with no
+                            obligation.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button
+                        class="faq-question flex justify-between items-center w-full text-left font-bold text-lg focus:outline-none">
+                        <span>How does data migration work?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 text-gray-600 hidden">
+                        <p>Our team will work with you to migrate your existing data from your current system. We
+                            support CSV imports for most data types and can handle direct migrations from many popular
+                            school management systems. The process typically takes 1-3 business days depending on the
+                            size of your school.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button
+                        class="faq-question flex justify-between items-center w-full text-left font-bold text-lg focus:outline-none">
+                        <span>What kind of training do you provide?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 text-gray-600 hidden">
+                        <p>We provide comprehensive training for administrators, teachers, and staff through live
+                            webinars, video tutorials, and documentation. For larger schools, we can arrange on-site
+                            training sessions. All customers also receive a dedicated onboarding specialist to guide
+                            them through the setup process.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button
+                        class="faq-question flex justify-between items-center w-full text-left font-bold text-lg focus:outline-none">
+                        <span>Is my school's data secure?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 text-gray-600 hidden">
+                        <p>Absolutely. We use enterprise-grade security measures including 256-bit SSL encryption,
+                            regular backups, and secure data centers. Our system is compliant with FERPA and other
+                            educational data protection regulations. You retain full ownership of all your data at all
+                            times.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="mb-6">
+                    <button
+                        class="faq-question flex justify-between items-center w-full text-left font-bold text-lg focus:outline-none">
+                        <span>Can we customize the system for our specific needs?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 text-gray-600 hidden">
+                        <p>Yes, EduManage Pro offers extensive customization options. Our Enterprise plan includes
+                            custom fields, workflows, and reports. For schools with unique requirements, our development
+                            team can create custom modules and integrations. Contact our sales team to discuss your
+                            specific needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-600">Still have questions? <a href="#"
+                        class="text-indigo-600 font-medium hover:text-indigo-800">Contact our support team</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
+                    <p class="text-xl text-gray-600 mb-8">Have questions or want to learn more? Our team is here to
+                        help.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email Us</h4>
+                                <p class="text-gray-600">support@edumanagepro.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Call Us</h4>
+                                <p class="text-gray-600">+1 (800) 555-0192</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Visit Us</h4>
+                                <p class="text-gray-600">123 Education Ave, Suite 400<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h4 class="font-bold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="first-name" class="block text-gray-700 font-medium mb-2">First
+                                        Name</label>
+                                    <input type="text" id="first-name"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-gray-700 font-medium mb-2">Last
+                                        Name</label>
+                                    <input type="text" id="last-name"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                            </div>
+                            <div class="mb-6">
+                                <label for="school" class="block text-gray-700 font-medium mb-2">School Name</label>
+                                <input type="text" id="school"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full py-3 px-6 bg-indigo-600 text-white rounded-lg font-bold hover:bg-indigo-700 transition duration-300">Send
+                                Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-xl mr-2">
+                            EM</div>
+                        <span class="text-xl font-bold text-white">EduManage<span
+                                class="text-indigo-400">Pro</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Comprehensive school management software designed to streamline
+                        administration and enhance learning.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Integrations</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Updates</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Help Center</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Webinars</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Tutorials</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">API Docs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Partners</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 EduManage Pro. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('header button').addEventListener('click', function () {
+            // This would toggle a mobile menu in a real implementation
+            alert('Mobile menu would open here in a complete implementation');
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+
+                // Rotate icon
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+
+</html>
