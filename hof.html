@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    function sayHello(callback) {
+        let name = 'Adedotun'
+        callback(name)
+    }
+
+    sayHello(function (params) {
+        console.log("Hello " + params);
+    })
+
+    // Find, forEach, filter, findIndex, reduce, map
+
+    // ForEach
+    let classNames = ["Mr AY", "Mr Ebuks", "Miss Ini", "Mr Lanre", "Mr Ore", "Mr Tony", "Mr John", "Miss Bimpe", "Mr Taofeek"]
+    let myForEach = classNames.forEach(function (element, index, arr) {
+        console.log(element);
+        // console.log(index);
+        // console.log(arr);
+        return 'Hello'
+    });
+
+    console.log(myForEach);
+
+    // Map
+    let num = [1, 2, 3, 4, 5]
+    let myMap = num.map(function (eachNumber, int, array) {
+        return eachNumber * 2
+    })
+
+    console.log(myMap);
+
+
+    let newNum = ['Balenciaga', 'Adidas', 'Balenciaga', 'Fendi', 'Fenty', 'Adidas']
+    // Filter
+    let myFilter = newNum.filter(function (products, i, arr) {
+        return products.includes('F')
+    })
+
+    console.log(myFilter);
+
+    // Find
+    let users = [
+        { userName: 'Mr Ay' },
+        { userName: 'Mr Ebuks' },
+        { userName: 'Mr Tony' },
+        { userName: 'Mr Ay' },
+    ]
+
+    let myFind = users.find(function (el, ind, arr) {
+        return el.userName === 'Mr Ay'
+    })
+    console.log(myFind);
+
+    let nums = [1, 2, 3, 4, 5, 6]
+    let myFind2 = nums.find(function (elem, ind, arr) {
+        return elem === 6
+    })
+    console.log(myFind2);
+
+</script>
