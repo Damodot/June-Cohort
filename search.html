@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/bbacfaf443.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 300px;
+            height: 500px;
+            background: white;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: 0;
+            transform: scale(0.95);
+            transition: box-shadow 0.5s, transform 0.5s;
+
+            &:hover {
+                transform: scale(1);
+                box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .container {
+                width: 100%;
+                height: 100%;
+
+                .top {
+                    height: 80%;
+                    width: 100%;
+                    -webkit-background-size: 100%;
+                    -moz-background-size: 100%;
+                    -o-background-size: 100%;
+                    background-size: 100%;
+                }
+
+                .top img {
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                .bottom {
+                    width: 200%;
+                    height: 20%;
+                    transition: transform 0.5s;
+
+                    &.clicked {
+                        transform: translateX(-50%);
+                    }
+
+                    h1 {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    p {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .left {
+                        height: 100%;
+                        width: 50%;
+                        background: #f4f4f4;
+                        position: relative;
+                        float: left;
+
+                        .details {
+                            padding: 20px;
+                            float: left;
+                            width: calc(70% - 40px);
+                        }
+
+                        .buy {
+                            float: right;
+                            width: calc(30% - 2px);
+                            height: 100%;
+                            background: #f1f1f1;
+                            transition: background 0.5s;
+                            border-left: solid thin rgba(0, 0, 0, 0.1);
+
+                            i {
+                                font-size: 30px;
+                                padding: 30px;
+                                color: #254053;
+                                transition: transform 0.5s;
+                            }
+
+                            &:hover {
+                                background: #A6CDDE;
+                            }
+
+                            &:hover i {
+                                transform: translateY(5px);
+                                color: #00394B;
+                            }
+                        }
+                    }
+
+                    .right {
+                        width: 50%;
+                        background: #A6CDDE;
+                        color: white;
+                        float: right;
+                        height: 200%;
+                        overflow: hidden;
+
+                        .details {
+                            padding: 20px;
+                            float: right;
+                            width: calc(70% - 40px);
+                        }
+
+                        .done {
+                            width: calc(30% - 2px);
+                            float: left;
+                            transition: transform 0.5s;
+                            border-right: solid thin rgba(255, 255, 255, 0.3);
+                            height: 50%;
+
+                            i {
+                                font-size: 30px;
+                                padding: 30px;
+                                color: white;
+                            }
+                        }
+
+                        .remove {
+                            width: calc(30% - 1px);
+                            clear: both;
+                            border-right: solid thin rgba(255, 255, 255, 0.3);
+                            height: 50%;
+                            background: #BC3B59;
+                            transition: transform 0.5s, background 0.5s;
+
+                            &:hover {
+                                background: #9B2847;
+                            }
+
+                            &:hover i {
+                                transform: translateY(5px);
+                            }
+
+                            i {
+                                transition: transform 0.5s;
+                                font-size: 30px;
+                                padding: 30px;
+                                color: white;
+                            }
+                        }
+
+                        &:hover {
+
+                            .remove,
+                            .done {
+                                transform: translateY(-100%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .inside {
+                z-index: 9;
+                background: #92879B;
+                width: 140px;
+                height: 140px;
+                position: absolute;
+                top: -70px;
+                right: -70px;
+                border-radius: 0px 0px 200px 200px;
+                transition: all 0.5s, border-radius 2s, top 1s;
+                overflow: hidden;
+
+                .icon {
+                    position: absolute;
+                    right: 85px;
+                    top: 85px;
+                    color: white;
+                    opacity: 1;
+                }
+
+                &:hover {
+                    width: 100%;
+                    right: 0;
+                    top: 0;
+                    border-radius: 0;
+                    height: 80%;
+
+                    .icon {
+                        opacity: 0;
+                        right: 15px;
+                        top: 15px;
+                    }
+
+                    .contents {
+                        opacity: 1;
+                        transform: scale(1);
+                        transform: translateY(0);
+                    }
+                }
+
+                .contents {
+                    padding: 5%;
+                    opacity: 0;
+                    transform: scale(0.5);
+                    transform: translateY(-200%);
+                    transition: opacity 0.2s, transform 0.8s;
+
+                    table {
+                        text-align: left;
+                        width: 100%;
+                    }
+
+                    h1,
+                    p,
+                    table {
+                        color: white;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<main class="p-4 w-100">
+    <h1 class="fw-bolder text-black text-center">Search Products</h1>
+    <input type="text" class="form-control my-5 m-auto w-50 py-3 px-5 rounded-5" placeholder="Search Products..."
+        oninput="searchProducts(event)">
+    <div class="productsDiv d-flex mt-4 flex-wrap justify-content-around align-items-center">
+
+    </div>
+</main>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    // $('.buy').click(function() {
+    //         $('.bottom').addClass("clicked");
+    //     });
+
+    // $('.remove').click(function() {
+    //         $('.bottom').removeClass("clicked");
+    //     }); 
+
+    let container = document.querySelector('.productsDiv')
+
+    const products = [
+        {
+            name: "Wireless Headphones",
+            image: "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg", // Pexels HQ
+            description: "Over‑ear wireless headphones with sleek design and rich sound.",
+            price: 120
+        },
+        {
+            name: "Smartwatch",
+            image: "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg", // Pexels
+            description: "Modern smartwatch with fitness tracking and notifications.",
+            price: 199
+        },
+        {
+            name: "Gaming Mouse",
+            image: "https://images.pexels.com/photos/17821147/pexels-photo-17821147.jpeg", // Pexels
+            description: "Ergonomic gaming mouse with programmable buttons.",
+            price: 59
+        },
+        {
+            name: "Bluetooth Speaker",
+            image: "https://images.pexels.com/photos/7772558/pexels-photo-7772558.jpeg", // Pexels
+            description: "Portable Bluetooth speaker with deep bass.",
+            price: 45
+        },
+        {
+            name: "DSLR Camera",
+            image: "https://images.pexels.com/photos/274973/pexels-photo-274973.jpeg", // Pexels
+            description: "Classic DSLR camera for high‑quality photography.",
+            price: 799
+        },
+        {
+            name: "Laptop Backpack",
+            image: "https://images.pexels.com/photos/7054799/pexels-photo-7054799.jpeg", // Pexels
+            description: "Water‑resistant backpack with laptop compartment.",
+            price: 65
+        },
+        {
+            name: "Fitness Tracker",
+            image: "https://images.pexels.com/photos/8032913/pexels-photo-8032913.jpeg", // same as smartwatch for example
+            description: "Slim fitness tracker with heart‑rate and steps counter.",
+            price: 49
+        },
+        {
+            name: "Portable Charger",
+            image: "https://thumbs.dreamstime.com/b/colorful-power-banks-white-background-portable-external-rechargeable-mobile-device-battery-chargers-110441132.jpg", // Pexels
+            description: "10,000 mAh portable charger for devices on the go.",
+            price: 29
+        },
+        {
+            name: "Action Camera",
+            image: "https://images.pexels.com/photos/8799699/pexels-photo-8799699.jpeg", // Pexels
+            description: "Compact action camera with 4K recording.",
+            price: 179
+        },
+        {
+            name: "Electric Toothbrush",
+            image: "https://assets.boots.com/content/dam/boots/shop-by-department/electrical/2024---2025/9a/9b_Electrical_STB_OralB_supplied.dam.ts%3D1744018799962.png", // Pexels
+            description: "Rechargeable electric toothbrush with multiple modes.",
+            price: 39
+        },
+        {
+            name: "Running Shoes",
+            image: "https://lovellcdn.b-cdn.net/products/2100250.jpg", // Pexels
+            description: "Lightweight running shoes with cushioned sole.",
+            price: 89
+        },
+        {
+            name: "Coffee Maker",
+            image: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg", // Pexels
+            description: "Programmable drip coffee maker with timer.",
+            price: 79
+        }
+    ];
+
+    function displayProducts(params) {
+        container.innerHTML = ''
+        params.forEach((product, i) => {
+            container.innerHTML += `
+            <div class="wrapper">
+                <div class="container">
+                    <div class="top">
+                        <img src="${product.image}"
+                            class="w-100 h-100" alt="">
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <div class="details p-3">
+                                <h4 class="text-black">${product.name}</h4>
+                                <p class="text-black">£${product.price}</p>
+                            </div>
+                            <div class="buy d-flex justify-content-center align-items-center"><i
+                                    class="fa-solid fa-cart-plus fs-4 text-black"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inside">
+                    <div class="icon"><i class="fa-solid fa-info"></i></div>
+                    <div class="contents p-3">
+                        <p class="text-white">${product.description}...</p>
+                    </div>
+                </div>
+            </div>
+            `
+        })
+    }
+
+    displayProducts(products)
+
+    function searchProducts(ev) {
+        let query = ev.target.value.trim().toLowerCase();
+        
+        
+
+        let filteredProducts = products.filter(product => {
+            console.log(product.price.toString());
+            return (
+                product.name.toLowerCase() === query ||
+                product.description.toLowerCase().includes(query) ||
+                product.price.toString().includes(query)
+            )
+        })
+
+        console.log(filteredProducts);
+
+        if (filteredProducts.length >= 1) {
+            displayProducts(filteredProducts)
+        } else {
+            container.innerHTML = ''
+            container.innerHTML = `<h1>No product match your search</h1>`
+        }
+    }
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="search()">Search</button>
+    <div id="divv"></div>
+</body>
+</html>
+
+<script>
+    let productArr = ['WristWatch', 'BasketBall', 'Laptop Bag', 'Balenciaga', 'Sneakers']
+    let input = document.querySelector('#input')
+    let divv = document.querySelector('#divv')
+
+    function showProducts(params) {
+        divv.innerHTML = ''
+        params.forEach(element => {
+            divv.innerHTML += `<h1>${element}</h1>`
+        });
+        
+    }
+    showProducts(productArr)
+    function search() {
+        if (input.value.trim() === '') {
+            alert ('input field is mandatry')
+            return
+            
+        }
+       let disp = productArr.filter(element => {
+            return element.toLowerCase().includes(input.value.trim().toLowerCase())
+        }) ;
+        if ( disp.length === 0) {
+            divv.innerHTML = `<h1>This Product is not Available</h1>`
+            
+            
+        } else {
+            
+            showProducts(disp)
+        }
+        
+        
+        console.log(disp);
+        
+    }
+</script>

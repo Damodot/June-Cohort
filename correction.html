@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" id="password">
+    <button onclick="showpass()">Show/Hide</button>
+    <img src="" alt="" id="image">
+     <button onclick="previous()" >Previous</button>
+      <button onclick="next()">Next</button>
+</body>
+</html>
+
+<script>
+    let index = 0
+    const input = document.getElementById("password")
+    function showpass() {
+    //  if (input.type === "password") {
+    //   input.type = "text"
+    // } else{
+    //     input.type = 'password'
+    // }
+    input.type = input.type === 'password' ? 'text' : 'password'
+}
+
+    function genRgbColor() {
+        return `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+    }
+
+    console.log(genRgbColor());
+
+    document.body.style.backgroundColor = genRgbColor()
+    
+
+    let imgArr = ['Golden Number One Transparent PNG Clip Art Image.jpeg', 'Golden Number Three Transparent PNG Clip Art Image.jpeg', 'Golden Number Two Transparent PNG Clip Art Image.jpeg', 'Golden Number Zero Transparent PNG Clip Art Image.jpeg']
+        const img = document.getElementById("image")
+        
+        img.style.width = '400px'
+        img.style.height = '400px'
+
+        function images() {
+            img.src = imgArr[index]
+        }
+        function next() {
+            index++;
+            if (index === imgArr.length) {
+                index = 0
+            }
+            images()
+        }
+        function previous() {
+          index-- 
+          
+          if (index < 0 ) {
+            index = imgArr.length -1
+          }
+          images()
+        }
+        images()
+</script>
